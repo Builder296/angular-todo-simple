@@ -1,0 +1,30 @@
+<div>
+  <div class="control">
+    <button class="button is-primary" routerLink="/add">Add</button>
+  </div>
+  <br/>
+  <div class="tile">
+    <p class="subtitle">List Tasks</p>
+  </div>
+  <br>
+  <div *ngFor="let task of taskDataService.taskData; let i = index">
+    <app-task-view
+      [task]="task"
+      [index]="i"
+      *ngIf="!task.isComplete"
+      ></app-task-view>
+  </div>
+  <br>
+  <div class="tile">
+    <p class="subtitle">List Completed</p>
+  </div>
+  <br>
+  <div *ngFor="let task of taskDataService.taskData; let i = index">
+    <app-task-view
+      [task]="task"
+      (check)="onCheck(i)"
+      *ngIf="task.isComplete"
+      ></app-task-view>
+  </div>
+
+</div>

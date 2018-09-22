@@ -1,0 +1,21 @@
+<div class="box" appRainbow >
+  <article class="media">
+    <figure class="media-left">
+      <label class="checkbox">
+        <input type="checkbox" [checked]="task.isComplete" (click)="onComplete(index)" (change)="onChange()" >
+        <!-- &nbsp; {{ i+1 }} -->
+      </label>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ task.title | title: "Title" }} </strong>
+          <br>
+          <small>{{ task.date | title: "Date" }}</small>
+          <br>
+          <small>{{ task.description | title: "Description" }}</small>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>

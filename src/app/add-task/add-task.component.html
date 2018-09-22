@@ -1,0 +1,31 @@
+<div [formGroup]="addFormGroup">
+  <div class="tile">
+    <p class="subtitle">Add Tasks</p>
+  </div>
+  <br/>
+  <div class="field">
+    <label class="label">Titel</label>
+    <div class="control">
+      <input type="text" class="input" placeholder="Titel" formControlName="title">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Date</label>
+    <div class="control">
+      <input type="date" class="input" placeholder="Date" formControlName="date">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+      <input type="text" class="input" placeholder="Description" formControlName="description">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-primary" (click)="addTask()" [disabled]="addFormGroup.invalid">Submit</button>
+      &nbsp;
+      <button class="button is-danger" routerLink="">Cancel</button>
+    </div>
+  </div>
+</div>
